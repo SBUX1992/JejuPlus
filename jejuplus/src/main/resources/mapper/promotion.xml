@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- resources/mapper/PromotionMapper.xml -->
+<mapper namespace="com.green.jejuplus.repository.interfaces.PromotionRepository">
+    
+    <select id="getPromotions" resultType="com.green.jejuplus.dto.admin.AdminPromotionDto">
+       select * from tb_promotion;
+
+    </select>
+    
+     <select id="getImageUrlsByPromotionId" resultType="java.lang.String">
+        SELECT img_path imgPath FROM tb_promotionimg WHERE promotion_id = #{promotionId} limit 1
+    </select>
+    
+     <select id="findPromotions" parameterType="map" resultType="com.green.jejuplus.dto.admin.AdminPromotionDto">
+        SELECT *
+        FROM tb_promotion
+        ORDER BY start_date DESC
+        LIMIT #{promotionsPerPage} OFFSET #{offset}
+    </select>
+    
+    <select id="searchPromotions" resultType="com.green.jejuplus.dto.admin.AdminPromotionDto">
+        SELECT * FROM tb_promotion
+        WHERE title LIKE CONCAT('%', #{search}, '%')
+        LIMIT #{pageSize}
+        OFFSET #{offset}
+    </select>
+    
+      <select id="count" resultType="int">
+  		SELECT COUNT(*) FROM tb_promotion;
+	</select>
+    
+     <select id="countPromotionsWithSearch" resultType="int" parameterType="string">
+        SELECT COUNT(*) FROM tb_promotion
+        WHERE title LIKE CONCAT('%', #{search}, '%')
+    </select>
+    <select id="findByPromotionDetail" resultType="com.green.jejuplus.repository.model.Promotion">
+    SELECT * FROM tb_promotion WHERE promotion_id = #{promotionId}
+    </select>
+    
+    <select id="findByPromotionImg" resultType="com.green.jejuplus.repository.model.PromotionImg">
+    SELECT * FROM tb_promotionimg WHERE promotion_id = #{promotionId}
+    </select>
+    
+     <select id="findByEndDateBefore" resultType="com.green.jejuplus.repository.model.Promotion">
+    SELECT * FROM tb_promotion WHERE end_date  <![CDATA[<]]> #{currentDate}
+    </select>
+
+    <select id="findByAdminPromotionDetail" resultType="com.green.jejuplus.dto.admin.AdminPromotionDto">
+    SELECT * FROM tb_promotion WHERE promotion_id = #{promotionId}
+    </select>
+    
+    <select id="checkImageExists" resultType="int">
+    SELECT COUNT(*) FROM tb_promotionimg
+    WHERE promotion_id = #{promotionId}
+	</select>
+
+ 	<select id="findByPromotionImgPath" resultType="com.green.jejuplus.repository.model.PromotionImg">
+    	SELECT promotionimg_id FROM tb_promotionimg WHERE promotion_id = #{promotionId}
+    </select>
+    
+    
+   <insert id="savePromotion" useGeneratedKeys="true" keyProperty="promotionId">
+    INSERT INTO tb_promotion (title, introduce, content, start_date, end_date)
+    VALUES (#{title}, #{introduce}, #{content}, NOW(), DATE_ADD(NOW(), INTERVAL 1 MONTH))
+	</insert>
+
+    
+     <insert id="savePromotionImg">
+        INSERT INTO tb_promotionimg (img_path, promotion_id)
+        VALUES (#{filename}, #{promotionId})
+    </insert>
+    
+    <delete id = "adminPromotionDelete">
+delete from tb_promotion where promotion_id = #{promotionId}
+</delete>		
+
+<delete id = "adminPromotionImgDelete">
+delete from tb_promotionimg where promotion_id = #{promotionId}
+</delete>	
+
+<delete id ="deleteImgByPromotionId">
+delete from tb_promotionimg where promotion_id = #{promotionId}
+</delete>	
+
+<delete id="deleteAll" parameterType="list">
+    DELETE FROM tb_promotion
+    WHERE promotion_id = #{promotionId}
+</delete>
+
+<update id="updatePromotion">
+update tb_promotion set title=#{title}, introduce=#{introduce}, content=#{content} where promotion_id = #{promotionId}
+</update>
+
+<update id="updatePromotionImg">
+update tb_promotionimg set img_path=#{imageFilename} where promotion_id = #{promotionId} and promotionimg_id=#{promotionImgId}
+</update> 
+
+<update id="updatePromotionEndDate">
+update tb_promotion set end_date=DATE_ADD(#{endDate}, INTERVAL 1 MONTH) where promotion_id = #{promotionId}
+</update>
+
+</mapper>

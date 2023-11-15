@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.green.jejuplus.repository.interfaces.DummyRepository">
+
+<select id="findPlace" resultType="Place">
+	select * from tb_place where place_id >= 1601
+</select>
+
+<update id="updateOverview">
+	update tb_place set overview = #{overview} where place_id = #{placeId}
+</update>
+
+<insert id = "insertData">
+	insert into tb_contents (contents_temp_id, contents_label, title, region1, region2, jibeon_address, road_address, tag, introduction, latitude, longitude, phone_no, img_path, thumbnail_path)
+	values (#{contentsTempId},#{contentsLabel},#{title},#{region1},#{region2},#{jibeonAddress},#{roadAddress},#{tag},#{introduction},#{latitude},#{longitude},#{phoneNo},#{imgPath},#{thumbnailPath})
+</insert>
+	
+ 
+</mapper>

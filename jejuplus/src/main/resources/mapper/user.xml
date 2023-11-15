@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.green.jejuplus.repository.interfaces.UserRepository">
+
+	
+
+
+<select id="findByUsername"
+		resultType="com.green.jejuplus.repository.model.User">
+		select * from tb_user where username = #{username}
+	</select>
+	
+	<select id="findByEmail"
+		resultType="com.green.jejuplus.repository.model.User">
+		select * from tb_user where email =#{email}
+	</select>
+	
+	<select id="findById" resultType = "com.green.jejuplus.repository.model.User">
+		SELECT * FROM tb_user WHERE user_id = #{userId}
+	</select>
+	
+	<select id="findByUser" resultType = "com.green.jejuplus.dto.user.UserUpdateDto">
+		SELECT * FROM tb_user WHERE user_id = #{userId}
+	</select>
+	
+	<select id="findByUpdateEmail" resultType = "com.green.jejuplus.repository.model.User">
+		SELECT * FROM tb_user WHERE user_id = #{userId}
+	</select>
+	
+	<select id="findByPassword" resultType = "com.green.jejuplus.repository.model.User">
+		SELECT * FROM tb_user WHERE user_id = #{userId}
+	</select>
+	
+	<select id="findByUserPassword" resultType = "com.green.jejuplus.repository.model.User">
+		SELECT * FROM tb_user WHERE username = #{username}
+	</select>
+	
+	<select id="findByUsernameEmail" resultType = "com.green.jejuplus.repository.model.User">
+		select * from tb_user where username= #{username} and email=#{email}
+	</select>
+	
+	<select id="findByUserDelete" resultType = "com.green.jejuplus.dto.user.UserDeleteDto">
+		SELECT * FROM tb_user WHERE username = #{username}
+	</select>
+	
+	<select id="findByUserDeleteCheck" resultType = "com.green.jejuplus.dto.user.UserDeleteDto">
+		SELECT * FROM tb_user WHERE username = #{username} and password=#{password}
+	</select>
+	
+	<select id="findUsers" resultType="com.green.jejuplus.dto.admin.AdminUserDto">
+        SELECT * FROM tb_user
+        LIMIT #{pageSize} OFFSET #{offset}
+    </select>
+    
+       <select id="count" resultType="int">
+  SELECT COUNT(*) FROM tb_user;
+	</select>
+
+<!-- src/main/resources/mapper/UserMapper.xml -->
+
+<!-- Search users with category and search -->
+<select id="searchUsers" parameterType="map" resultType="com.green.jejuplus.dto.admin.AdminUserDto">
+    SELECT *
+    FROM tb_user
+    WHERE
+        <choose>
+            <!-- Depending on the category, apply search criteria -->
+             <when test="category == 'all'">
+                1=1
+            </when>
+            <when test="category == 'username'">
+                username LIKE CONCAT('%', #{search}, '%')
+            </when>
+            <when test="category == 'email'">
+                email LIKE CONCAT('%', #{search}, '%')
+            </when>
+            <when test="category == 'fullname'">
+                fullname LIKE CONCAT('%', #{search}, '%')
+            </when>
+            <when test="category == 'phoneNumber'">
+                phone_number LIKE CONCAT('%', #{search}, '%')
+            </when>
+            
+        </choose>
+    LIMIT #{pageSize} OFFSET #{offset}
+</select>
+
+<!-- Count users with category and search -->
+<select id="countWithSearch" parameterType="map" resultType="int">
+    SELECT COUNT(*)
+    FROM tb_user
+    WHERE
+        <choose>
+        <when test="category == 'all'">
+                1=1
+            </when>
+            <!-- Depending on the category, apply search criteria -->
+            <when test="category == 'username'">
+                username LIKE CONCAT('%', #{search}, '%')
+            </when>
+            <when test="category == 'email'">
+                email LIKE CONCAT('%', #{search}, '%')
+            </when>
+            <when test="category == 'fullname'">
+                fullname LIKE CONCAT('%', #{search}, '%')
+            </when>
+            <when test="category == 'phoneNumber'">
+                phone_number LIKE CONCAT('%', #{search}, '%')
+            </when>
+        </choose>
+</select>
+
+
+
+<update id = "updateUser">
+update tb_user set email=#{email}, phone_number = #{phoneNumber}, fullname = #{fullname} where user_id = #{userId}
+</update>
+
+<update id = "updateEmail">
+update tb_user set email=#{email} where user_id = #{userId}
+</update>
+
+<update id = "userLevelUpdate">
+update tb_user set level_id=#{levelId} where username = #{username}
+</update>		
+
+	<update id = "updateUserPassword">
+update tb_user set password=#{password} where user_id = #{userId}
+</update>
+	
+
+
+<insert id = "insertUser">
+	insert into
+		tb_user(username,level_id,password,fullname,email,phone_number,is_kakao)
+		value
+		( #{username}, 1,#{password}, #{fullname}, #{email}, #{phoneNumber},'N')
+	</insert>
+	
+	<insert id = "insertKakaoUser">
+	insert into
+		tb_user(username,level_id,password,fullname,email,phone_number,is_kakao)
+		value
+		( #{username}, 1,#{password}, #{fullname}, #{email}, #{phoneNumber},'Y')
+	</insert>
+	
+<delete id = "userDelete">
+delete from tb_user where username = #{username}
+</delete>
+
+<delete id = "adminUserDelete">
+delete from tb_user where username = #{username}
+</delete>		
+
+</mapper>

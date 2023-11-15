@@ -1,0 +1,13 @@
+api설계
+--1차 개발--
+
+메인페이지	http://localhost:80/main
+
+
+air
+항공편메인	http:localhost:80/air/index
+항공편예약 및 결제	http:localhost:80/air/booking
+항공편 결제 완료	http:localhost:80/air/booking/bookingcomplete
+
+user
+구매 내역		http:localhost:80/user/orderList

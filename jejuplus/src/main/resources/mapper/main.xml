@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.green.jejuplus.repository.interfaces.MainRepository">
+
+	<select id="findRestaurantAll" parameterType="map"
+		resultType="com.green.jejuplus.dto.MainRestaurantDto">
+		SELECT recommendedCnt, c.*
+		FROM (
+		SELECT (SELECT COUNT(*) FROM tb_recommended r WHERE c.contents_id =
+		r.contents_id) AS recommendedCnt, c.*
+		FROM tb_contents c
+		WHERE contents_label = '음식점'
+		)as p
+		left join tb_contents c
+		on p.contents_id = c.contents_id
+		WHERE recommendedCnt >= 5
+	</select>
+
+	<select id="findPlaceAll" parameterType="map"
+		resultType="com.green.jejuplus.dto.MainRestaurantDto">
+		SELECT recommendedCnt, c.*
+		FROM (
+		SELECT (SELECT COUNT(*) FROM tb_recommended r WHERE c.contents_id =
+		r.contents_id) AS recommendedCnt, c.*
+		FROM tb_contents c
+		WHERE contents_label = '관광지'
+		)as p
+		left join tb_contents c
+		on p.contents_id = c.contents_id
+		WHERE recommendedCnt >= 5
+	</select>
+
+</mapper>

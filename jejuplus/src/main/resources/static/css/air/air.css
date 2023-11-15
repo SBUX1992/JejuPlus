@@ -1,0 +1,781 @@
+/**
+ * 10-24
+ * 강중현
+ */
+
+/* 전체 페이지 스타일 */
+/* 전체 페이지 스타일 */
+* {
+	text-decoration: none;
+	color: black;
+}
+
+ul,
+li,
+ol {
+	list-style: none;
+}
+
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* ---------- index css start ---------- */
+
+/* flight start */
+.flight {
+	background-image: url(../../images/air/air-main.PNG);
+	height: 600px;
+	margin: auto;
+	color: white;
+	display: flex;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.flight .flight-container {
+	background-color: #fff;
+	margin: auto;
+	width: 1000px;
+	padding: 15px;
+	border-radius: 30px;
+}
+
+.flight .flight-container h4 {
+	margin: 10px 15px;
+	font-size: 25px;
+}
+
+.flight .flight-container span {
+	font-size: 20px;
+}
+
+.flight-search {
+	display: flex;
+	margin-top: 10px;
+	justify-content: space-around;
+	align-items: center;
+}
+
+/* dep start */
+.dep-name {
+	flex: 0;
+	margin: 0;
+}
+
+.dep-name label {
+	font-size: 20px;
+}
+
+.dep-search {
+	display: flex;
+	position: relative;
+	width: 200px;
+}
+
+.dep-input {
+	width: 100%;
+	height: 40px;
+	/* 들여쓰기 */
+	text-indent: 25px;
+	font-size: 15px;
+}
+
+/* dep end */
+
+/* arr start */
+.arr-name {
+	flex: 0;
+	margin: 0;
+}
+
+.arr-name label {
+	font-size: 20px;
+}
+
+.arr-search {
+	display: flex;
+	position: relative;
+	width: 200px;
+}
+
+.arr-input {
+	width: 100%;
+	height: 40px;
+	/* 들여쓰기 */
+	text-indent: 25px;
+	font-size: 15px;
+}
+
+/* arr end */
+
+/* input icon start */
+.fa-map-marker-alt {
+	cursor: pointer;
+	position: absolute;
+	left: 5px;
+	top: 10px;
+	font-size: 25px;
+}
+
+.fa-times-circle {
+	/* display: none; */
+	cursor: pointer;
+	position: absolute;
+	right: 8px;
+	top: 15px;
+	font-size: 15px;
+}
+
+/* input icon end */
+
+/* customer start */
+.customer-container {
+	/*    border: 1px solid red;*/
+}
+
+.customer-option {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 250px;
+}
+
+.passenger-selector {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+}
+
+.cus-minus-adult,
+.cus-plus-adult,
+.cus-minus-child,
+.cus-plus-child {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-color: #f37021;
+	/* 배경색을 원하는 색상으로 지정하세요 */
+	color: #fff;
+	/* 텍스트 색상을 원하는 색상으로 지정하세요 */
+	text-align: center;
+	font-size: 18px;
+	/* 텍스트 크기를 조정하세요 */
+	line-height: 30px;
+	border-radius: 50%;
+	/* 버튼을 둥근 모양으로 만듭니다 */
+	cursor: pointer;
+	margin: 0 5px;
+	/* 버튼 사이의 간격을 조절하세요 */
+	transition: background-color 0.3s;
+	/* 배경색 변화에 효과를 줍니다 */
+
+	/* 호버(마우스 오버) 시 배경색 변경 */
+	&:hover {
+		background-color: #0056b3;
+		/* 원하는 호버 시 배경색을 지정하세요 */
+	}
+}
+
+/* customer end */
+
+/* flight end */
+
+/* calender start */
+.calnender-container {
+	margin: 15px 0;
+}
+
+.justify-content-center {
+	margin-top: 45px;
+	display: flex !important;
+	justify-content: space-evenly !important;
+}
+
+.calender-label {
+	font-size: 25px;
+}
+
+.input-daterange {
+	margin: 0 50px;
+}
+
+.calender-input {
+	padding: 10px 15px !important;
+	border: 1px solid #cfd8dc !important;
+	border-radius: 4px !important;
+	box-sizing: border-box;
+	background-color: #fff !important;
+	color: #000 !important;
+	font-size: 16px !important;
+	letter-spacing: 1px;
+	position: relative;
+	width: 200px;
+	text-align: center;
+}
+
+input:focus {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	border: 1px solid #ffa000 !important;
+	outline-width: 0;
+}
+
+.daterangepicker {
+	background-color: #fff;
+	border-radius: 0 !important;
+	align-content: center !important;
+	padding: 0 !important;
+
+}
+
+/*Weekday Heading*/
+thead tr:nth-child(2) {
+	color: #bdbdbd !important;
+}
+
+tbody tr td {
+	padding: 5px 7px !important;
+}
+
+.month {
+	font-size: 16px !important;
+	padding-bottom: 10px !important;
+	padding-top: 10px !important;
+}
+
+.start-date,
+.end-date {
+	border-radius: 0px !important;
+}
+
+.available:hover {
+	border-radius: 0px !important;
+}
+
+.off {
+	color: #eeeeee !important;
+}
+
+.off:hover {
+	background-color: #eeeeee !important;
+	color: #fff !important;
+}
+
+.drp-buttons {
+	display: none !important;
+}
+
+/* calender end */
+
+.flight-find {
+	margin: 10px 0;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flight-find-btn {
+	font-size: 20px;
+	width: 250px;
+	height: 50px;
+	cursor: pointer;
+	background-color: #f37021;
+	border: 1px solid #f37021;
+	margin-top: 10px;
+}
+
+/* flight end */
+
+/* 공지사항 */
+.air_notice {
+	height: 250px;
+	width: 1000px;
+	background-color: white;
+	margin: 50px auto;
+	padding: 20px;
+}
+
+.air_notice h2 {
+	display: inline;
+	margin-bottom: 24px;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 20px;
+}
+
+.more_view {
+	display: inline;
+	float: right;
+	line-height: 20px;
+}
+
+.notice_list {
+	margin-top: 20px;
+}
+
+.notice-title {
+	width: 850px;
+	float: left;
+}
+
+.notice-date {
+	width: 95px;
+	float: right;
+}
+
+/* 공지사항 end */
+
+/* ---------- index css end ---------- */
+/* ---------- booking css start ---------- */
+
+/* main start */
+/* booking-container start */
+.booking-container {}
+
+main .booking-container {
+	width: 100%;
+	min-height: 500px;
+}
+
+.mybooking {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+main .booking-container .mybooking .nav {
+	display: block;
+	text-align: center;
+	margin: 30px 0;
+}
+
+main .booking-container .mybooking .nav p {
+	display: inline-block;
+	font-size: 20px;
+	text-align: left;
+	color: #555;
+}
+
+main .booking-container .mybooking .nav p span {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	background: #e5e5e5;
+	border-radius: 30px;
+	color: #fff;
+	font-weight: bold;
+	margin-right: 3px;
+}
+
+main .booking-container .mybooking .nav p.current {
+	color: #212121;
+	font-weight: bold;
+}
+
+main .booking-container .mybooking .nav p.current span {
+	background: #81cb49;
+}
+
+/* flight-info start */
+.flight-info-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.flight-info-column {
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+}
+
+.flight-info-head {
+	align-items: center;
+	display: flex;
+}
+
+.flight-logo {
+	width: 30px;
+	margin-right: 16px;
+}
+
+.flight-info-body {
+	display: flex;
+}
+
+.flight-brand {}
+
+.dep-block {
+	display: flex;
+	position: relative;
+}
+
+.dep-block p {
+	font-size: 24px;
+}
+
+.flight-time {
+	content: '';
+	display: block;
+	width: 150px;
+	border-bottom: 1px solid black;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+}
+
+.flight-time-info {
+	margin-top: 6px;
+	left: 25%;
+	position: absolute;
+}
+
+.airport-name {
+	text-indent: 15px;
+	width: 250px;
+	font-size: 16px !important;
+}
+
+.arr-block {
+	display: flex;
+	position: relative;
+}
+
+.arr-block p {
+	font-size: 24px;
+}
+
+.price-block {
+	width: 15%;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	font-size: 20px;
+}
+
+.n1-check-block {
+	width: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.n1-check-input {
+	display: none;
+}
+
+.n1-check-air {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	width: 80%;
+	height: 50px;
+	font-weight: bold;
+	border: 1px solid #f37021;
+	border-radius: 10px;
+	background-color: #fff;
+	color: #333;
+}
+
+.n1-check-block input[type='radio']:checked+label {
+	background-color: #f37021;
+	color: #fff;
+}
+
+
+.n2-check-block {
+	width: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.n2-check-input {
+	display: none;
+}
+
+.n2-check-air {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	width: 80%;
+	height: 50px;
+	font-weight: bold;
+	border: 1px solid #f37021;
+	border-radius: 10px;
+	background-color: #fff;
+	color: #333;
+}
+
+.n2-check-block input[type='radio']:checked+label {
+	background-color: #f37021;
+	color: #fff;
+}
+
+
+/* flight-info end */
+
+/* 항공권 정보 start */
+.booking-info {
+	width: 1400px;
+	margin: 0 auto;
+}
+
+.left-info {
+	width: 800px;
+	float: left;
+}
+
+.info-wrap {
+	background-color: #f5f5f5;
+	padding: 25px;
+	margin-bottom: 20px;
+}
+
+.info-header {
+	background: #f5f5f5;
+	padding: 5px;
+}
+
+.info-title {
+	margin: 5px auto;
+	color: #555;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.info-body {
+	border-top: 1px solid #e6e9ed;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+}
+
+.round-ticket {
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 12px;
+}
+
+.round-ticket-content {
+	font-size: 16px;
+	line-height: 1.8;
+}
+
+/* 항공권 정보 end */
+/* 구매자 정보 start */
+.same-info {
+	font-size: 16px;
+}
+
+.customer-info-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin: 5px auto;
+}
+
+.customer-info {
+	display: flex;
+	flex-direction: column;
+	margin: 5px 5px;
+}
+
+.customer-info>label {
+	line-height: 2;
+	font-size: 16px;
+}
+
+.customer-info-input {
+	width: 220px;
+	height: 40px;
+	font-size: 18px;
+	text-indent: 10px;
+}
+
+/* 구매자 정보 end */
+/* right-info start */
+.right-info {
+	width: 580px;
+	float: right;
+	position: relative;
+}
+
+/* 취소 정책 start */
+.info-item {
+	margin-bottom: 20px;
+	background-color: white;
+}
+
+.cancel-content {
+	max-height: 250px;
+	overflow: auto;
+	font-size: 14px;
+	line-height: 1.5;
+	margin: 10px
+}
+
+/* 취소 정책 end */
+/* 결제 정보 start */
+.pay-info {
+	border-bottom: 1px solid #eee;
+}
+
+.pay-ditail-list {
+	background-color: white;
+	border-radius: 10px;
+	margin-bottom: 16px;
+}
+
+.price-info {
+	display: flex;
+	justify-content: space-around;
+}
+
+.item-text {}
+
+.item-price {
+	font-weight: bold;
+}
+
+.final-price-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.final-price {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.final-price-plus {
+	text-align: right;
+}
+
+/* 결제 정보 end */
+/* 결제 start */
+
+.paymentList {
+	margin: 10px 0px;
+}
+
+.paymentList>li {
+	display: inline-block;
+}
+
+.paymentList input[type='radio'] {
+	display: none;
+}
+
+.paymentList input[type='radio']+label {
+	display: inline-block;
+	cursor: pointer;
+	width: 150px;
+	height: 50px;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 50px;
+	border: 1px solid #f37021;
+	border-radius: 10px;
+	background-color: #fff;
+	color: #333;
+	margin-top: 5px;
+	align-items: center;
+}
+
+.paymentList input[type='radio']:checked+label {
+	background-color: #f37021;
+	color: #fff;
+}
+
+.btnOrder {
+	display: block;
+	width: 380px;
+	height: 60px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 60px;
+	text-align: center;
+	background-color: #f37021;
+	border-radius: 6px;
+	margin: 0 auto;
+	border: none;
+	cursor: pointer;
+}
+
+/* 결제 end */
+/* right-info end */
+/* booking-container end */
+/* main end */
+/* ---------- booking css end ---------- */
+/* ---------- booking complete css start ---------- */
+.complete-body {
+	width: 800px;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+}
+
+.complete-body>span {
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.complete-wrap {
+	background-color: #f5f5f5;
+	padding: 25px;
+	margin-bottom: 20px;
+}
+
+.complete-body>.btn {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 100px;
+	align-items: center;
+}
+
+.complete-body>.btn>a {
+	width: 200px;
+	height: 60px;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0 50px;
+	cursor: pointer;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.complete-body>.btn>a:nth-of-type(1) {
+	color: #f37021;
+	background: #fff;
+	border: 1px solid #f37021;
+}
+
+.complete-body>.btn>a:nth-of-type(2) {
+	color: white;
+	background: #f37021;
+	border: none;
+}
+
+/* ---------- booking complete css end ---------- */

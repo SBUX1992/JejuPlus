@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.green.jejuplus.repository.interfaces.AirRepository">
+	
+	<insert id="insertAir">
+		INSERT INTO tb_air(user_id, payment_id, dep_pland_time, arr_pland_time, airline_nm, arr_airport_nm, dep_airport_nm)
+		VALUES(#{userId}, #{paymentId}, #{depPlandTime}, #{arrPlandTime}, #{airlineNm}, #{arrAirportNm}, #{depAirportNm}),
+		(#{userId}, #{paymentId}, #{depPlandTime2}, #{arrPlandTime2}, #{airlineNm}, #{arrAirportNm2}, #{depAirportNm2});
+	</insert>
+	
+	<select id="findByAirList" resultType="com.green.jejuplus.repository.model.Air">
+		select * from tb_air where user_id = #{userId};
+	</select>
+	
+	<select id="findById" resultType="com.green.jejuplus.repository.model.Payment">
+		SELECT * FROM tb_payment ORDER BY payment_id DESC LIMIT 1;
+	</select>
+	
+</mapper>

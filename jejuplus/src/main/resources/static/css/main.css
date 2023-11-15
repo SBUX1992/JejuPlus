@@ -1,0 +1,433 @@
+/**
+ * 10-24
+ * 강중현
+ */
+
+/* 전체 페이지 스타일 */
+/* 전체 페이지 스타일 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	color: black;
+}
+
+ul,
+li,
+ol {
+	list-style: none;
+}
+
+body {
+	background-color: #f5f5f5;
+}
+
+/* 헤더 start */
+
+header {
+    color: black;
+    padding: 20px;
+    background-color: transparent !important;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 20px 20px 20px;
+}
+
+.logo a img {
+    height: 30px;
+}
+.menu {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    margin-right: 20px;
+}
+.menu li {
+    margin-left: 40px;
+    font-weight: 500;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+
+
+.menu a {
+    text-decoration: none;
+    color: white !important;
+}
+
+#hiddenMenu {
+  position: absolute;
+  right: 7.3rem !important;
+  top: 55px;
+  box-sizing: border-box;
+  width: 100px !important;
+  background-color: rgb(0,0,0,0.4) !important;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 2;
+}
+#hiddenMenu2 {
+  position: absolute;
+  right: 20.3rem !important;
+  top: 55px;
+  box-sizing: border-box;
+  width: 100px !important;
+  background-color: rgb(0,0,0,0.4) !important;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 2;
+}
+#hiddenMenu3 {
+  position: absolute;
+  right:13.8rem !important;
+  top: 55px;
+  box-sizing: border-box;
+  width: 100px !important;
+  background-color: rgb(0,0,0,0.4) !important;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 2;
+}
+.hidden_div {
+	text-align: center;
+}
+
+/* 날씨 */
+.app {
+	display: inline-block;
+	position: relative;
+}
+
+.sidebar {
+	/* position: fixed; */
+	position: absolute;
+	margin: 50px 50px 0 0;
+	right: 0;
+	display: none;
+	height: 450px;
+	width: 400px;
+
+	border: 1px solid red;
+}
+
+.show-sidebar {
+	display: block;
+}
+
+/* 헤더 end */
+
+/* 푸터 start */
+footer {
+	display: flex;
+	width: 100%;
+	height: 500px;
+	border-top: 1px solid #e5e5e5;
+	background: #f9f9f9;
+	overflow: hidden;
+}
+
+footer>div {
+	width: 900px;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+footer>div>ul {
+	width: 450px;
+	margin: 30px auto 0;
+	overflow: hidden;
+}
+
+footer>div>ul>li {
+	float: left;
+	margin-right: 30px;
+}
+
+footer>div>ul>li>a {
+	color: #777;
+	font-size: 14px;
+}
+
+footer>div>ul>li>a:hover {
+	color: #212121;
+}
+
+footer>div>section {
+	float: left;
+	margin-top: 30px;
+	margin-left: 30px;
+	margin-right: 120px;
+	line-height: 30px;
+	color: #555;
+}
+
+footer>div>section>span {
+	display: inline;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+footer>div>section>ul {
+	margin-bottom: 10px;
+}
+
+footer>div>section>ul>li {
+	font-size: 12px;
+	line-height: 25px;
+	color: #777;
+}
+
+footer>div>section>ul>li>span {
+	color: #c36565;
+}
+
+footer>div>section>ul>li>a {
+	font-size: 12px;
+	color: #777;
+}
+
+footer>div>section>ul>li>a:hover {
+	color: #212121;
+}
+
+.footerinfo {
+	clear: both;
+}
+
+/* 푸터 end */
+/* 히어로 섹션 스타일 */
+.hero {
+	background-image: url(/images/main_background_img.png);
+	background-color: rgb(0, 0, 0, 0.2);
+	background-blend-mode: multiply;
+	background-repeat: no-repeat;
+	background-position: 0%;
+	background-size: cover;
+	height: 550px;
+	text-align: center;
+	color: white;
+}
+
+.hero h1 {
+	font-size: 50px;
+	font-weight: bold;
+	margin-top: 110px;
+	color: white;
+}
+
+.hero p {
+	font-size: 20px;
+	margin-top: 20px;
+	color: white;
+}
+
+#main_btn {
+	width: 200px;
+	height: 45px;
+	background-color: #f37021;
+	color: white;
+	border: none;
+	box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.3);
+	margin-top: 20px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+/* 
+더 알아보기
+.cta-button {
+    display: inline-block;
+    background-color: #f6842e;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+} 
+*/
+
+/* calender start */
+label {
+	font-size: 18px;
+}
+
+.calender-input {
+	padding: 10px 15px !important;
+	border: 1px solid #cfd8dc !important;
+	border-radius: 4px !important;
+	box-sizing: border-box;
+	background-color: #fff !important;
+	color: #000 !important;
+	font-size: 16px !important;
+	letter-spacing: 1px;
+	position: relative;
+	width: 350px;
+	text-align: center;
+}
+
+input:focus {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	border: 1px solid #ffa000 !important;
+	outline-width: 0;
+}
+
+.daterangepicker {
+	background-color: #fff;
+	border-radius: 0 !important;
+	align-content: center !important;
+	padding: 0 !important;
+	width: 625px !important;
+}
+
+/*Weekday Heading*/
+thead tr:nth-child(2) {
+	color: #bdbdbd !important;
+}
+
+tbody tr td {
+	padding: 5px 7px !important;
+}
+
+.month {
+	font-size: 16px !important;
+	padding-bottom: 10px !important;
+	padding-top: 10px !important;
+}
+
+.start-date,
+.end-date {
+	border-radius: 0px !important;
+}
+
+.available:hover {
+	border-radius: 0px !important;
+}
+
+.off {
+	color: #eeeeee !important;
+}
+
+.off:hover {
+	background-color: #eeeeee !important;
+	color: #fff !important;
+}
+
+.drp-buttons {
+	display: none !important;
+}
+
+/* calender end */
+
+
+
+/* 남형빈 */
+
+.main-packages-body {
+	display: flex;
+	justify-content: space-between;
+	/* 양 옆에 배치 */
+	align-items: center;
+	/* 수직 가운데 정렬 */
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+
+.slide-prev,
+.slide-next {
+	padding: 5px 10px;
+	border: 0px;
+	background-color: transparent;
+	cursor: pointer;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.bi-caret-right-fill,
+.bi-caret-left-fill {
+	font-size: 40px;
+	line-height: 22px;
+}
+
+
+/* 투어 패키지 섹션 스타일 */
+.tour-packages {
+	width: 1400px;
+
+}
+
+.tour-packages .carousel-container {
+	margin: 0 -10px;
+	/* 원하는 간격 크기로 조절하세요 */
+}
+
+.tour-packages .slide-prev,
+.tour-packages .slide-next {
+	margin: 0 10px;
+	/* 원하는 간격 크기로 조절하세요 */
+}
+
+
+.tour-packages div h2 {
+	padding-top: 10px;
+	font-size: 18px;
+	font-weight: 700;
+	margin:auto;
+}
+
+.packageContainer {
+	display: flex;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.package {
+	height: 340px;
+	width: 180px;
+	margin-right: 10px;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	flex: 0 0 22%;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical
+		/* Adjust the percentage width based on your design */
+}
+
+.package img {
+	height: 150px;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.package h3 {
+	margin: 10px 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 25px;
+	font-weight: 500;
+}
+
+
+.package p {
+	font-size: 16px;
+	color: #767676;
+	width: 190px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* 남형빈 끝 */

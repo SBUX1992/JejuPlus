@@ -1,0 +1,51 @@
+server:
+  port: 80
+  servlet:
+    encoding:
+      charset: utf-8
+      force: true
+      
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+  datasource:
+    url: jdbc:mysql://localhost:3306/jejuplus?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: asd1234
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 50MB
+  
+  mail:
+    host: smtp.gmail.com # 1
+    port: 587 # 2
+    username: godql7408@gmail.com # 3
+    password: hjnz zmah zcxi vwnq # 4
+    properties:
+      mail:
+        smtp:
+          auth: true # 5
+          timeout: 5000 # 6
+          starttls:
+            enable: true # 7
+      
+
+mybatis:
+  mapper-locations:
+  - classpath:mapper/**.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.green.jejuplus.repository.model
+  
+logging:
+  level:
+    org.mybatis.spring: debug
+    
+UPLOAD_DIRECTORY: /src/main/resources/static/images/promotion
+

@@ -1,0 +1,65 @@
+	body{
+		font-family: 'Noto Sans KR', sans-serif;
+		background-color: white;
+	}
+	#favoriteArea {
+		font-size: 40px;
+		font-weight: bold;
+		text-align: center;
+		margin: 20px;
+	}
+	#container {
+		width: 1000px;
+		margin: 0 auto;
+		
+	}
+	#box{
+		background-color: white;
+		width: 200px;
+		float: left;
+		margin: 20px;
+		text-align : center;
+		transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		cursor: pointer;
+	}
+	#label{
+		width:60px;
+		height: 20px;
+		background-color:#f37021;
+		color: white;
+		font-weight:500;
+		font-size: 13px;
+		border-top-right-radius: 10px;
+		box-shadow: inset 5px 5px 5px -5px rgb(0, 0, 0,0.2);
+	}
+	#img-box {
+		width:200px;
+		height:150px;
+		overflow:hidden;
+	}
+	#img {
+		width:100%;
+		height:100%;
+	    object-fit: cover;
+	}
+	#content-box {
+		float:left;
+		width:200px;
+		height: 75px;
+		border: solid 0.1px lightgrey;
+		padding-top: 10px;
+	
+	}
+	#title {
+		font-size: 18px;
+		font-weight: bold;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		padding-right:10px;
+		padding-left:10px;
+	}
+	#location {
+		width:200px;
+		font-size: 13px;
+	}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.green.jejuplus.repository.interfaces.PaymentRepository">
+
+	<!-- <insert id="insert"> -->
+	<!-- INSERT INTO tb_payment(user_id, created_at, tid) -->
+	<!-- VALUES(#{userId}, NOW(), #{pgTid}); -->
+	<!-- </insert> -->
+
+	<insert id="insert" useGeneratedKeys="true"
+		keyProperty="paymentId">
+		<selectKey keyProperty="paymentId" resultType="int"
+			order="AFTER">
+			SELECT LAST_INSERT_ID() AS paymentId;
+		</selectKey>
+		INSERT INTO tb_payment(user_id, created_at, tid) VALUES(#{userId},
+		NOW(), #{pgTid});
+	</insert>
+
+	<select id="findById"
+		resultType="com.green.jejuplus.repository.model.Payment">
+		SELECT * FROM tb_payment ORDER BY payment_id DESC LIMIT 1;
+	</select>
+
+</mapper>

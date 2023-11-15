@@ -1,0 +1,143 @@
+@charset "EUC-KR";
+
+.container {
+	margin-top: 50px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.card-text {
+	color: rgb(172, 172, 172);
+}
+
+.card-title a {
+	text-decoration: none;
+}
+
+.card-header {
+	background: #f37021;
+}
+
+.list-header {
+	margin: 40px 0;
+	margin-left: 10%;
+}
+
+.card {
+	margin: 20px 0;
+	width: 80%;
+	margin-left: 10%;
+}
+
+#sche-modal {
+	margin-left: 38px;
+}
+
+#sche-calendar {
+
+	cursor: pointer;
+}
+
+/* 모달 스타일 */
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+	background-color: #fff;
+	margin: 10% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	border-radius: 5px;
+	width: 90%;
+	max-width: 500px;
+}
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.list-body {
+	min-height: 500px;
+}
+
+.non-list {
+	width: 100%;
+	height: 100%;
+	min-height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.error-logo {
+
+	display: block;
+	margin: 30px auto;
+	max-width: 300px;
+	max-height: 75px;
+	width: auto;
+	height: auto;
+}
+
+.notice {
+	color: grey;
+	font-size: 20px;
+}
+
+.btn-orange {
+
+	color: #fff;
+	background: #f37021;
+}
+
+.status {
+	
+	color: #fff;
+	font-size: 14px;
+}
+
+#img-box {
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	filter: brightness(0.75);
+}
+
+#up-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.schedule-promotion-img-text {
+	position: relative;
+
+}
+
+.schedule-promotion-uptext {
+	position: absolute;
+	top: 40%;
+	left: 44%;
+	font-size: xxx-large;
+
+}
+
+.open-add-modal {
+	margin-left: 40%;
+}

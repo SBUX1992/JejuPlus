@@ -1,0 +1,136 @@
+/* 전체 페이지 스타일 */
+* {
+    text-decoration: none;
+    color: black;
+}
+ul,
+li,
+ol {
+    list-style: none;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* 헤더 start */
+header {
+    background-color: white;
+    color: black;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a img {
+    height: 40px;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+
+/* 날씨 */
+.app {
+    display: inline-block;
+    position: relative;
+}
+.sidebar {
+    /* position: fixed; */
+    position: absolute;
+    margin: 50px 50px 0 0;
+    right: 0;
+    display: none;
+    height: 450px;
+    width: 400px;
+
+    border: 1px solid red;
+}
+.show-sidebar {
+    display: block;
+}
+
+/* 헤더 end */
+
+/* 푸터 start */
+footer {
+    display: flex;
+    width: 100%;
+    height: 500px;
+    border-top: 1px solid #e5e5e5;
+    background: #f9f9f9;
+    overflow: hidden;
+}
+footer > div {
+    width: 900px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+footer > div > ul {
+    width: 450px;
+    margin: 30px auto 0;
+    overflow: hidden;
+}
+footer > div > ul > li {
+    float: left;
+    margin-right: 30px;
+}
+footer > div > ul > li > a {
+    color: #777;
+    font-size: 14px;
+}
+footer > div > ul > li > a:hover {
+    color: #212121;
+}
+footer > div > section {
+    float: left;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 120px;
+    line-height: 30px;
+    color: #555;
+}
+footer > div > section > span {
+    display: inline;
+    font-size: 26px;
+    font-weight: bold;
+}
+footer > div > section > ul {
+    margin-bottom: 10px;
+}
+footer > div > section > ul > li {
+    font-size: 12px;
+    line-height: 25px;
+    color: #777;
+}
+footer > div > section > ul > li > span {
+    color: #c36565;
+}
+footer > div > section > ul > li > a {
+    font-size: 12px;
+    color: #777;
+}
+footer > div > section > ul > li > a:hover {
+    color: #212121;
+}
+.footerinfo {
+    clear: both;
+}
+/* 푸터 end */

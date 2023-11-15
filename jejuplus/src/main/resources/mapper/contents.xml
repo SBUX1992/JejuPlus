@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.green.jejuplus.repository.interfaces.ContentsRepository"> 
+
+	<select id="findTouristAreaList" resultType="com.green.jejuplus.dto.contents.TouristAreaListDto">
+		select (select ROUND(AVG(review_star), 1) from tb_review r WHERE c.contents_id = r.contents_id ) as reviewAvg, (select count(*) from tb_recommended r WHERE c.contents_id = r.contents_id ) as recommendedCnt, (select count(*) from tb_review r WHERE c.contents_id = r.contents_id ) as reviewCnt, c.* from tb_contents c where contents_label = '관광지' order by recommendedCnt desc limit #{offset}, #{recordSize}
+	</select>
+	
+	<select id="showTouristAreaDetail" resultType="com.green.jejuplus.dto.contents.TouristAreaDetailDto">
+		select * from tb_contents where contents_id = #{contentsId}
+	</select>
+
+	<select id="findRestaurantList" resultType="com.green.jejuplus.dto.contents.RestaurantListDto">
+		select (select ROUND(AVG(review_star), 1) from tb_review r WHERE c.contents_id = r.contents_id ) as reviewAvg, (select count(*) from tb_recommended r WHERE c.contents_id = r.contents_id ) as recommendedCnt, (select count(*) from tb_review r WHERE c.contents_id = r.contents_id ) as reviewCnt, c.* from tb_contents c where contents_label = '음식점' order by recommendedCnt desc limit #{offset}, #{recordSize}
+	</select>
+	
+	<select id="showRestaurantDetail" resultType="com.green.jejuplus.dto.contents.RestaurantDetailDto">
+		select * from tb_contents where contents_id = #{contentsId}
+	</select>
+	
+	<select id="findLodgingList" resultType="com.green.jejuplus.dto.contents.LodgingListDto">
+		select (select ROUND(AVG(review_star), 1) from tb_review r WHERE c.contents_id = r.contents_id ) as reviewAvg, (select count(*) from tb_recommended r WHERE c.contents_id = r.contents_id ) as recommendedCnt, (select count(*) from tb_review r WHERE c.contents_id = r.contents_id ) as reviewCnt, c.* from tb_contents c where contents_label = '숙박' order by recommendedCnt desc limit #{offset}, #{recordSize}
+	</select>
+	
+	<select id="showLodgingDetail" resultType="com.green.jejuplus.dto.contents.LodgingDetailDto">
+		select * from tb_contents where contents_id = #{contentsId}
+	</select>
+	
+	<select id="findShoppingList" resultType="com.green.jejuplus.dto.contents.ShoppingListDto">
+		select (select ROUND(AVG(review_star), 1) from tb_review r WHERE c.contents_id = r.contents_id ) as reviewAvg, (select count(*) from tb_recommended r WHERE c.contents_id = r.contents_id ) as recommendedCnt, (select count(*) from tb_review r WHERE c.contents_id = r.contents_id ) as reviewCnt, c.* from tb_contents c where contents_label = '쇼핑' order by recommendedCnt desc limit #{offset}, #{recordSize}
+	</select>
+
+	<select id="showShoppingDetail" resultType="com.green.jejuplus.dto.contents.ShoppingDetailDto">
+		select * from tb_contents where contents_id = #{contentsId}
+	</select>
+	
+	
+	<select id="selectFavoriteList" resultType="com.green.jejuplus.dto.contents.FavoriteDto">
+		select c.contents_id, c.contents_label, c.title, c.region1, c.region2, c.thumbnail_path
+		from tb_contents as c
+		inner join tb_favorite as f
+		on c.contents_id = f.contents_id
+		where f.user_id = #{userId}
+	</select>
+	
+	<select id="selectRecommend" resultType="com.green.jejuplus.repository.model.Contents">
+		select * from tb_contents where user_id = #{userId} and contents_id = #{contentsId} limit 1
+	</select>
+	<select id="countTouristArea">
+		select count(*) from tb_contents where contents_label = "관광지"
+	</select>
+	<select id="countRestaurant">
+		select count(*) from tb_contents where contents_label = "음식점"
+	</select>
+	<select id="countLodging">
+		select count(*) from tb_contents where contents_label = "숙박"
+	</select>
+	<select id="countShopping">
+		select count(*) from tb_contents where contents_label = "쇼핑"
+	</select>
+</mapper>

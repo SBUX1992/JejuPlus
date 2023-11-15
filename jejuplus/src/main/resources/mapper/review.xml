@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.green.jejuplus.repository.interfaces.ReviewRepository">
+	<select id="selectReview" resultType="com.green.jejuplus.repository.model.Review">
+		select * from tb_review where  user_id = #{userId} and contents_id = #{contentsId} limit 1
+	</select>
+
+	<select id="findUsernameByUserId" resultType="String"> <!-- resultType 확인! -->
+		select username from tb_user where user_id = #{userId}
+	</select>
+	
+	<select id="findReviewList" resultType="com.green.jejuplus.dto.contents.ReviewDto">
+		select * from tb_review where contents_id = #{contentsId} ORDER BY review_id DESC
+	</select>
+	
+	<insert id="insertReview">
+		insert into tb_review(review_star, contents_id, user_id, review_content,created_at)
+		values(#{reviewStar},#{contentsId},#{userId},#{reviewContent},now())
+	</insert>
+	
+	<update id="updateReview">
+		UPDATE tb_review SET review_star = #{reviewStar}, review_content = #{reviewContent}
+		WHERE user_id = #{userId} and review_id = #{reviewId} 
+	</update>
+	
+	<delete id="deleteReview">
+		DELETE FROM tb_review WHERE review_id = #{reviewId}
+	</delete>
+	
+</mapper>

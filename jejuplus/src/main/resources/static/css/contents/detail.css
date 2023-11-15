@@ -1,0 +1,275 @@
+	body { 
+	 font-family: 'Noto Sans KR', sans-serif;
+	}
+	#box {
+		width:1000px;
+		text-align: center;
+		margin: auto;
+	}
+	#img-cover{
+		position: relative; 	
+	}
+	#img-box {
+		filter: brightness(0.6);
+		width:100%;
+		height:250px;
+		overflow:hidden;
+	}
+	#imgPath {
+		width:100%;
+		height:100%;
+	    object-fit: cover;
+	}
+	#title {
+		font-size: 50px;
+		font-weight:bold;
+		position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+        color: white;
+        text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.3);
+	}
+	#introduction {
+		width:800px;
+		color: #f37021;
+		font-size: 20px;
+		font-weight: 500;
+		margin: auto;
+	}
+
+	#tag {
+		font-size: 15px;
+		color:grey;
+
+	}
+	#map{
+		margin: auto;
+		width: 1000px;
+		height: 600px;
+	}
+	#infomation {
+		background-color:#f4f4f4;
+		height: 180px;
+		font-size: 15px;
+	}
+	#infomation-title {
+		font-weight: bold;
+    	padding-top: 15px;
+	}
+	#table{
+		margin:auto;
+	}
+	#table td{
+		padding-left: 20px;
+		height: 30px;
+	}
+	.subTitle {
+		margin: auto;
+		width: 1000px;
+		height: 30px;
+		background: rgb(243, 112, 33, 0.1);
+		border: 1.5px solid #f37021;
+		color: #f37021;
+		font-size: 15px;
+		font-weight: bold;
+	}
+	.icon {
+		width: 40px;
+	}
+	#icon {
+		width:1000px;
+		font-size: 15px;
+		margin: auto;
+
+	}
+	.favorite_heart {
+		width: 40px;
+	}
+	#insertReview{
+		margin: auto;
+		width: 1000px;
+	}
+	#insertReview fieldset{
+	    display: inline-block;
+	    direction: rtl;
+	    border:0;
+	}
+	#insertReview fieldset legend{
+	    text-align: right;
+	}
+	#insertReview input[type=radio]{
+	    display: none;
+	}
+	#insertReview label{
+	    font-size: 3em;
+	    color: transparent;
+	    text-shadow: 0 0 0 #f0f0f0;
+	}
+	#insertReview label:hover{
+	    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+	}
+	#insertReview label:hover ~ label{
+	    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+	}
+	#insertReview input[type=radio]:checked ~ label{
+	    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+	}
+	#review-btn{
+		text-align: center;
+	}
+	#insertReviewBtn {
+		width: 100px;
+		height: 30px;
+		background-color: #f37021;
+		color: white;
+		border: none;
+		border-radius: 3px;
+		margin:10px;
+	}
+	#modifyReviewBtn{
+		width : 45px;
+		background-color: #f37021;
+		color: white;
+		border: solid 1px #f37021;
+		border-radius: 3px;
+	}
+	#deleteReviewBtn {
+		width : 45px;
+		background-color: #fafafa;
+		color: 292929;
+		border: solid 1px darkgrey;
+		border-radius: 3px;
+	}
+	#modifyReview{
+		margin: auto;
+		width: 1000px;
+	}
+	#modifyReview fieldset{
+	    display: inline-block;
+	    direction: rtl;
+	    border:0;
+	}
+	#modifyReview fieldset legend{
+	    text-align: right;
+	}
+	#modifyReview input[type=radio]{
+	    display: none;
+	}
+	#modifyReview label{
+	    font-size: 3em;
+	    color: transparent;
+	    text-shadow: 0 0 0 #f0f0f0;
+	}
+	#modifyReview label:hover{
+	    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+	}
+	#modifyReview label:hover ~ label{
+	    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+	}
+	#modifyReview input[type=radio]:checked ~ label{
+	    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+	}
+	#modal {
+	  position: fixed;
+	  z-index: 1;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+	  overflow: auto;
+	  background-color: rgba(0, 0, 0, 0.4);
+	  display: none;
+	}
+	.modal-content {
+	  background-color: #fefefe;
+	  margin: 15% auto;
+	  padding: 20px;
+	  border: 1px solid #888;
+	  width: 80%;
+	}
+	#modal-title {
+		text-align: center;
+		font-size: 30px;
+		font-weight: bold;
+		color: #292929;
+		
+	}
+	
+	#modifyContent {
+	    width: 1000px;
+	    height: 150px;
+	    margin: auto;
+	    padding: 10px;
+	    box-sizing: border-box;
+	    border: solid 1.5px #D3D3D3;
+	    border-radius: 5px;
+	    font-size: 16px;
+	    resize: none;
+	}
+
+	#reviewContent {
+	    width: 1000px;
+	    height: 150px;
+	    padding: 10px;
+	    box-sizing: border-box;
+	    border: solid 1.5px #D3D3D3;
+	    font-size: 16px;
+	    resize: none;
+	}
+	
+	#reviewList {
+		margin: auto;
+		width: 1000px;
+	}
+	
+	#username {
+		color: #292929;
+		font-weight: 700;
+	}
+	
+	#reviewDate {
+		color:darkgrey;
+		font-size: 15px;
+		font-weight: 400;
+		margin-bottom: 5px;
+	}
+	
+	#reviewStar{
+		color:#292929;
+		font-weight: 400;
+	}
+	
+	.yellowStar{
+		color: rgba(250, 208, 0, 0.99);
+		margin-left:-5px;
+	}
+	.greyStar {
+		color: #f0f0f0;
+		margin-left:-5px;
+	}
+	#modal-button {
+		text-align: center;
+		display :inline-block;		
+		margin: 10px;
+	}
+	#modifyModal {
+		width : 80px;
+		background-color: #f37021;
+		color: white;
+		border: solid 1px #f37021;
+		border-radius: 3px;
+		margin-right: 5px;
+	}
+	#closeModal {
+		width : 50px;
+		background-color: #fafafa;
+		color: 292929;
+		border: solid 1px darkgrey;
+		border-radius: 3px;
+	}
+	
+	#recommended, #unrecommended, #unrecommended2, #favorite, #unfavorite{
+		cursor: pointer;
+	}
+
